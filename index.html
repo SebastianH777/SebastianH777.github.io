@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Assis Hancco Tuni</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #330c49;
+        }
+
+        header {
+            background-color: #1a234b;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #330c49;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #330c49;
+        }
+
+        .container {
+            padding: 2em;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            margin-bottom: 2em;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #1a234b;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1em 0;
+            padding: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #330c49;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slide-in 0.5s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .open-modal-btn {
+            background-color: #1a234b;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .open-modal-btn:hover {
+            background-color: #1a234b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sebastian Assis Hancco Tuni</h1>
+    </header>
+    <nav>
+        <a href="#bio">Biografía</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+    <div class="container">
+        <section id="bio" class="section">
+            <h2>Biografía</h2>
+            <div class="card">
+                <p>Hola, soy Sebastian Assis Hancco Tuni, tengo 17 años, estudio en la Universidad Catolica San Pablo, la carrera de Ciencia de la Computacion, mis hobbies son la natacion, esuchar musica (mis cantantes favoritos son Canserbero, Myke Towers)
+                    si pudiera elegir una cancion para escuchar el resto de mi vida seria una de Canserbero se llama De La Vida Como Película, Tragedia, Comedia y Ficción, esta cancion esa demasiada buena
+                ,mas de una vez, me hizo superarme. </p>
+                <button class="open-modal-btn" onclick="openModal()">Más sobre mi carrera</button>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Proyectos</h2>
+            <div class="card">
+                <h3>Bomberman</h3>
+                <p>En el primer semestre en el curso de PVJ. hice un juego en python, el cual era Bomberman.
+                    Este es un juego en donde tienes que eliminar a todos los enemigos del área dejando bombas en una zona laberíntica, después de hacerlo tienes que encontrar la puerta hasta el siguiente nivel usando las bombas para destruir los bloques.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Base de Datos de una tienda de abarrotes</h3>
+                <p>Este es un proyecto de mi semestre actual, este trata de una base de datos de una tienda de abarrotes la cual almacena datos de la tienda, clientes y proveedores.
+                    Con este proyecto buscamos tener una mejor manejo de las ganacias y de las ventas, para una mayor produccion.
+                </p>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contacto</h2>
+            <div class="card">
+                <p>Correo: <a href="mailto:sebas.hanccco@gmail.com">sebas.hanccco@gmail.com</a></p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Shebitas.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Más sobre mi carrera</h2>
+            <p>Se trata de un campo de conocimiento que abarca las diferentes áreas de estudio e investigación que emplean datos y algoritmos para la construcción de ecosistemas digitales y la resolución de problemas informáticos complejos.
+                Se compone de varias disciplinas relacionadas entre sí a nivel teórico, metodológico, estructural y funcional.
+                Entre estas disciplinas, destacan el Desarrollo de Algoritmos, Inteligencia Artificial, Ciencia de Datos, Ingeniería de Software, Teoría de la Computación, Programación, Robótica y Tecnologías de la Información.</p>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Cerrar el modal al hacer clic fuera del contenido del modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                document.getElementById("myModal").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
